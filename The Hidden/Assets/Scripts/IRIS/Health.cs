@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public int playerhealth;
 
     public HiddenController hiddenController;
+    public Grenade grenadeController;
 
 
    
@@ -28,6 +29,11 @@ public class Health : MonoBehaviour
     public void onDamage()
     {
         playerhealth -= hiddenController.attackDamage;
+    }
+
+    public void onExplosionDamage()
+    {
+        playerhealth -= grenadeController.explosionDamage;
     }
 
 }

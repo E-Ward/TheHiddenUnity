@@ -261,13 +261,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 848971864}
+  characterController: {fileID: 0}
   range: 100
   force: 1000
   pounceForce: 15
+  throwForce: 20
+  wallClingRange: 2
   hiddenHealth: 0
   hiddenStamina: 0
   attackDamage: 30
+  isWallClinging: 0
+  distanceToGround: 0
+  isGrounded: 0
   fpsCam: {fileID: 1506007436}
+  IRIS: {fileID: 0}
+  Grenade: {fileID: 1542169142258017328, guid: 06e1f7718081ccb49ab31817086cea75, type: 3}
 --- !u!1 &848971858
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +292,7 @@ GameObject:
   - component: {fileID: 848971864}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: IRIS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,6 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerhealth: 0
   hiddenController: {fileID: 1638743447}
+  grenadeController: {fileID: 0}
 --- !u!1 &865511699
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +506,7 @@ GameObject:
   - component: {fileID: 1155511319}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -786,13 +795,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 848971864}
+  characterController: {fileID: 0}
   range: 100
   force: 1000
   pounceForce: 150
+  throwForce: 40
+  wallClingRange: 2
   hiddenHealth: 0
   hiddenStamina: 0
   attackDamage: 30
+  isWallClinging: 0
+  distanceToGround: 0
+  isGrounded: 0
   fpsCam: {fileID: 1730822239}
+  IRIS: {fileID: 0}
+  Grenade: {fileID: 0}
 --- !u!114 &1638743448
 MonoBehaviour:
   m_ObjectHideFlags: 0
