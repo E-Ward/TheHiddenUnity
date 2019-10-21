@@ -111,7 +111,7 @@ MonoBehaviour:
   blastRadius: 5
   explosionForce: 200
   explosionDamage: 50
-  explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+  explosionEffect: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
     type: 3}
 --- !u!54 &1542169142258017338
 Rigidbody:
