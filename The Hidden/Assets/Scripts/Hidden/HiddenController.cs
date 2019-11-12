@@ -32,6 +32,7 @@ public class HiddenController : MonoBehaviour
 
     public GameObject IRIS;
     public GameObject Grenade;
+    public GameObject Molotov;
 
     void Start()
     {
@@ -61,6 +62,11 @@ public class HiddenController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))//This is when the left mouse button is pressed
         {
             GrenadeThrow();
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))//This is when the left mouse button is pressed
+        {
+            molotovThrow();
         }
 
         if (Input.GetMouseButtonDown(1))//This is when the right mouse button is pressed
@@ -149,6 +155,13 @@ public class HiddenController : MonoBehaviour
     {
         GameObject grenade = Instantiate(Grenade, fpsCam.transform.position, fpsCam.transform.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+    }
+
+    void molotovThrow()
+    {
+        GameObject molotov = Instantiate(Molotov, fpsCam.transform.position, fpsCam.transform.rotation);
+        Rigidbody rb = molotov.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
     }
 

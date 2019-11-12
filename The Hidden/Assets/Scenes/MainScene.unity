@@ -256,7 +256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &279561742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +285,7 @@ MonoBehaviour:
   fpsCam: {fileID: 1495701054}
   IRIS: {fileID: 0}
   Grenade: {fileID: 1542169142258017328, guid: 06e1f7718081ccb49ab31817086cea75, type: 3}
+  Molotov: {fileID: 0}
 --- !u!114 &279561743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &310805269
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -547,6 +548,7 @@ MonoBehaviour:
   fpsCam: {fileID: 1506007436}
   IRIS: {fileID: 0}
   Grenade: {fileID: 1542169142258017328, guid: 06e1f7718081ccb49ab31817086cea75, type: 3}
+  Molotov: {fileID: 1542169142258017328, guid: 0eb79ec5c5430e84db63d8a574d4ec3b, type: 3}
 --- !u!1 &378211357
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +862,8 @@ MonoBehaviour:
   playerhealth: 0
   hiddenController: {fileID: 310805275}
   grenadeController: {fileID: 1542169142258017329, guid: 06e1f7718081ccb49ab31817086cea75,
+    type: 3}
+  molotovController: {fileID: 6011808416356836779, guid: 0eb79ec5c5430e84db63d8a574d4ec3b,
     type: 3}
 --- !u!114 &848971865
 MonoBehaviour:
@@ -1681,7 +1685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 35
-  range: 20
+  range: 10
   fireRate: 2
   impactForce: 50
   maxAmmo: 18
@@ -1973,7 +1977,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 10}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613948221
 MonoBehaviour:

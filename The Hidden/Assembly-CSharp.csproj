@@ -174,8 +174,11 @@
     <Compile Include="Assets\Scripts\Hidden\MouseCamLook.cs" />
     <Compile Include="Assets\Scripts\Hidden\WallCling.cs" />
     <Compile Include="Assets\Scripts\IRIS\Health.cs" />
+    <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\deleteExplosion.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\Grenade.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov_Damage_Over_Time.cs" />
     <Compile Include="Assets\Target.cs" />
     <Compile Include="Assets\Weapon_Switching.cs" />
     <None Include="Assets\Downloaded assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - IRIS
+  - Ground
+  - Wall
+  - Molotov Area Of Effect
+  - Molotov
   layers:
   - Default
   - TransparentFX

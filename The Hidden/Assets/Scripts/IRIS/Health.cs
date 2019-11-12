@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
     public HiddenController hiddenController;
     public Grenade grenadeController;
 
+    public Molotov molotovController;
+
 
    
     // Start is called before the first frame update
@@ -29,6 +31,11 @@ public class Health : MonoBehaviour
     public void onDamage()
     {
         playerhealth -= hiddenController.attackDamage;
+    }
+
+    public void onMolotovDamage()
+    {
+        playerhealth -= molotovController.molotovDamage * (int)Time.deltaTime;
     }
 
     public void onExplosionDamage()
