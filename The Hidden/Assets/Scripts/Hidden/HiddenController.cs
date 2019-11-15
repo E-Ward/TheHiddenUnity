@@ -8,7 +8,7 @@ public class HiddenController : MonoBehaviour
 {
     public Health enemyHealth;
 
-    public CharacterController characterController;
+    public HiddenChController hiddenController;
 
     public float range = 100f;
     public float force;
@@ -18,7 +18,8 @@ public class HiddenController : MonoBehaviour
 
     public float wallClingRange = 2;
 
-    public float hiddenHealth;
+    public int hiddenHealth;
+    public Text hiddenHealthText;
     public float hiddenStamina;
     public float hiddenMaxStamina = 100f;
     public Slider hiddenStaminaSlider;
@@ -42,11 +43,13 @@ public class HiddenController : MonoBehaviour
         distanceToGround = GetComponent<Collider>().bounds.extents.y;
 
         IRIS = GameObject.FindGameObjectWithTag("IRIS");
-        characterController = GetComponent<CharacterController>();
+        hiddenController = GetComponent<HiddenChController>();
         enemyHealth = IRIS.GetComponent<Health>();
         rb = GetComponent<Rigidbody>();
 
-        hiddenHealth = 100f;
+        hiddenHealth = 100;
+        hiddenHealthText.text = hiddenHealth.ToString();
+
         hiddenStamina = 100f;
 
         hiddenStaminaSlider.maxValue = hiddenMaxStamina;
@@ -116,7 +119,7 @@ public class HiddenController : MonoBehaviour
         if (hiddenStamina <= 0 && isWallClinging == true)
         {
             rb.isKinematic = false;
-            characterController.enabled = true;
+            hiddenController.enabled = true;
             isWallClinging = false;
         }
 
@@ -136,16 +139,16 @@ public class HiddenController : MonoBehaviour
         if (hiddenStamina > 10 && isWallClinging == true)
         {
             rb.isKinematic = false;
-            characterController.enabled = true;
+            hiddenController.enabled = true;
             rb.velocity = fpsCam.transform.forward * pounceForce;
-            hiddenStamina -= 10f;
+            hiddenStamina -= 10;
             isWallClinging = false;
             hiddenStaminaSlider.value = hiddenStamina;
         }
         else if (hiddenStamina > 10 && isGrounded == true)
         {
             rb.velocity = fpsCam.transform.forward * pounceForce;
-            hiddenStamina -= 10f;
+            hiddenStamina -= 10;
             hiddenStaminaSlider.value = hiddenStamina;
         }
 
@@ -188,7 +191,7 @@ public class HiddenController : MonoBehaviour
     {
         rb.isKinematic = true;
         isWallClinging = true;
-        characterController.enabled = false;
+        hiddenController.enabled = false;
     }
 
 

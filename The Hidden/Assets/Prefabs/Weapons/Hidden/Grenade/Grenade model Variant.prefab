@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1542169142258017328, guid: 06e1f7718081ccb49ab31817086cea75,
         type: 3}
       propertyPath: m_Name
-      value: Grenade model
+      value: Grenade model Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1542169142258017333, guid: 06e1f7718081ccb49ab31817086cea75,
         type: 3}
@@ -67,6 +67,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1542169142258017332, guid: 06e1f7718081ccb49ab31817086cea75,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3832985582944277112, guid: 2d687b876b3a98549aad59921602e1be,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 1542169142258017329, guid: 06e1f7718081ccb49ab31817086cea75, type: 3}
     - {fileID: 1542169142258017338, guid: 06e1f7718081ccb49ab31817086cea75, type: 3}

@@ -170,10 +170,12 @@
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
     <Compile Include="Assets\Gun.cs" />
     <Compile Include="Assets\LaserScript.cs" />
-    <Compile Include="Assets\Scripts\Hidden\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\Hidden\HiddenChController.cs" />
     <Compile Include="Assets\Scripts\Hidden\HiddenController.cs" />
     <Compile Include="Assets\Scripts\Hidden\MouseCamLook.cs" />
     <Compile Include="Assets\Scripts\Hidden\WallCling.cs" />
+    <Compile Include="Assets\Scripts\Improved FP Controller\mouseLook.cs" />
+    <Compile Include="Assets\Scripts\Improved FP Controller\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\IRIS\Health.cs" />
     <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\deleteExplosion.cs" />

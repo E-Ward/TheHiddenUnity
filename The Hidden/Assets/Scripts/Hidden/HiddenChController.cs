@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class CharacterController : MonoBehaviour
+public class HiddenChController : MonoBehaviour
 {
 
     public float walkSpeed = 5.0f;
