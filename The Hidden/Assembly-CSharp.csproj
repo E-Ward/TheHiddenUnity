@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\btnFX.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Shared\Ramps\Runtime\RampAsset.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Shared\Scripts\AdjustTimeScale.cs" />
