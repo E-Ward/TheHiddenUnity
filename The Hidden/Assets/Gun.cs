@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -12,16 +13,30 @@ public class Gun : MonoBehaviour
     private int currentAmmo;
     public float reloadTime = 1f;
     private bool isReloading = false;
+
+    public int Mag1;
+    public int Mag2;
+    public int Mag3;
+    public int Mag4;
     
     public Camera fpsCam;
     public ParticleSystem muzleFlash;
     public GameObject impactEffect;
+
+    public Text AmmoText;
 
     private float nextTimeToFire = 0f;
 
     private void Start()
     {
         currentAmmo = maxAmmo;
+
+        Mag1 = maxAmmo;
+        Mag2 = maxAmmo;
+        Mag3 = maxAmmo;
+        Mag4 = maxAmmo;
+
+        AmmoText.text = maxAmmo.ToString();
     }
 
     void OnEnable()
@@ -32,14 +47,15 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AmmoText.text = currentAmmo.ToString();
         if (isReloading)
             return;
 
-        if (currentAmmo <= 0)
+        /*if (currentAmmo <= 0)
         {
             StartCoroutine(Reload());
             return;
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -47,7 +63,7 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetButton("Fire1") && currentAmmo >0 && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();

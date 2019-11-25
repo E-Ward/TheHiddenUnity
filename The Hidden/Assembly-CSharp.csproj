@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\btnFX.cs" />
+    <Compile Include="Assets\CharacterSelect.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Shared\Ramps\Runtime\RampAsset.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Shared\Scripts\AdjustTimeScale.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
     <Compile Include="Assets\Gun.cs" />
+    <Compile Include="Assets\Iriscanvasenable.cs" />
     <Compile Include="Assets\LaserScript.cs" />
     <Compile Include="Assets\Scripts\Hidden\HiddenChController.cs" />
     <Compile Include="Assets\Scripts\Hidden\HiddenController.cs" />
@@ -185,6 +187,7 @@
     <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov_Damage_Over_Time.cs" />
     <Compile Include="Assets\SonicAlarm.cs" />
     <Compile Include="Assets\Target.cs" />
+    <Compile Include="Assets\Video\videochange.cs" />
     <Compile Include="Assets\Weapon_Switching.cs" />
     <None Include="Assets\Downloaded assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Downloaded assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />

@@ -4,6 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
+    public GameObject characterSelect;
+
+    public GameObject CharacterSelectCamera;
+
+    public GameObject Hidden;
+    public GameObject IRIS;
+
+    public GameObject Controls;
+
+    public GameObject Hiddencanvas;
+    public GameObject IRIScanvas;
+
     public void GotoMenuScene()
     {
         SceneManager.LoadScene("Main_Menu");
@@ -26,5 +38,33 @@ public class SceneSwitcher : MonoBehaviour
     {
         Application.OpenURL("http://Youtube.com/");
         Debug.Log("is this working?");
+    }
+
+    public void CharacterSelectHidden()
+    {
+        characterSelect.SetActive(false);
+        CharacterSelectCamera.SetActive(false);
+        Hidden.SetActive(true);
+        IRIS.SetActive(false);
+        IRIScanvas.SetActive(false);
+    }
+
+    public void CharacterSelectIRIS()
+    {
+        characterSelect.SetActive(false);
+        CharacterSelectCamera.SetActive(false);
+        IRIS.SetActive(true);
+        Hidden.SetActive(false);
+        Hiddencanvas.SetActive(false);
+    }
+
+    public void ControlsEnable()
+    {
+        Controls.SetActive(true); 
+    }
+
+    public void ControlsDisable()
+    {
+        Controls.SetActive(false);
     }
 }

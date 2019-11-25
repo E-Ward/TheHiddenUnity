@@ -10,6 +10,8 @@ public class HiddenController : MonoBehaviour
 
     public HiddenChController hiddenController;
 
+    public GameObject HiddenCanvas;
+
     public float range = 100f;
     public float force;
     public int pounceForce;
@@ -56,6 +58,7 @@ public class HiddenController : MonoBehaviour
         hiddenStaminaSlider.value = hiddenMaxStamina;
 
         isWallClinging = false;
+        HiddenCanvas.SetActive(true);
     }
 
 
