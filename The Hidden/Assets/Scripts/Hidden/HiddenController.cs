@@ -6,17 +6,18 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class HiddenController : MonoBehaviour
 {
-    public Health enemyHealth;
+    
 
-    public HiddenChController hiddenController;
+    public MovementController hiddenController;
 
     public GameObject HiddenCanvas;
+
+    public Grenade_Instantiate grenadeThrow;
+    public Hidden_Knife_Attack hiddenKnifeAttack;
 
     public float range = 100f;
     public float force;
     public int pounceForce;
-
-    public float throwForce = 40f;
 
     public float wallClingRange = 2;
 
@@ -29,24 +30,19 @@ public class HiddenController : MonoBehaviour
 
     public bool isWallClinging;
 
-
     public float distanceToGround;
     public bool isGrounded = false;
 
     Rigidbody rb;
     public Camera fpsCam;
 
-    public GameObject IRIS;
-    public GameObject Grenade;
-    public GameObject Molotov;
-
     void Start()
     {
         distanceToGround = GetComponent<Collider>().bounds.extents.y;
 
-        IRIS = GameObject.FindGameObjectWithTag("IRIS");
-        hiddenController = GetComponent<HiddenChController>();
-        enemyHealth = IRIS.GetComponent<Health>();
+        
+        hiddenController = GetComponent<MovementController>();
+        
         rb = GetComponent<Rigidbody>();
 
         hiddenHealth = 100;
@@ -61,26 +57,8 @@ public class HiddenController : MonoBehaviour
         HiddenCanvas.SetActive(true);
     }
 
-
-
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))//This is when the left mouse button is pressed
-        {
-            Debug.Log("Player is Attacking");
-            Attack();
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))//This is when the G keyboard button is pressed
-        {
-            GrenadeThrow();
-        }
-
-        if (Input.GetKeyDown(KeyCode.M))//This is when the M keyboard button is pressed
-        {
-            molotovThrow();
-        }
-
         if (Input.GetMouseButtonDown(1))//This is when the right mouse button is pressed
             {
                 Debug.Log("Player is Pushing");
@@ -101,8 +79,6 @@ public class HiddenController : MonoBehaviour
                 Pounce();
             } 
         }
-        
-
         
         if(!Physics.Raycast(transform.position, -Vector3.up,distanceToGround + 0.1f) )
         {
@@ -134,8 +110,6 @@ public class HiddenController : MonoBehaviour
 
     }
 
-
-
     void Pounce()
     {
 
@@ -155,30 +129,6 @@ public class HiddenController : MonoBehaviour
             hiddenStaminaSlider.value = hiddenStamina;
         }
 
-    }
-
-
-    void Attack()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {
-            enemyHealth.onDamage();
-        }
-    }
-
-    void GrenadeThrow()
-    {
-        GameObject grenade = Instantiate(Grenade, fpsCam.transform.position, fpsCam.transform.rotation);
-        Rigidbody rb = grenade.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
-    }
-
-    void molotovThrow()
-    {
-        GameObject molotov = Instantiate(Molotov, fpsCam.transform.position, fpsCam.transform.rotation);
-        Rigidbody rb = molotov.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
     }
 
     void Push()

@@ -63,8 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\btnFX.cs" />
-    <Compile Include="Assets\CharacterSelect.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Shared\Ramps\Runtime\RampAsset.cs" />
     <Compile Include="Assets\Downloaded assets\EffectExamples\Shared\Scripts\AdjustTimeScale.cs" />
@@ -170,25 +168,32 @@
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\Gun.cs" />
-    <Compile Include="Assets\Iriscanvasenable.cs" />
-    <Compile Include="Assets\LaserScript.cs" />
-    <Compile Include="Assets\Scripts\Hidden\HiddenChController.cs" />
+    <Compile Include="Assets\Scripts\btnFX.cs" />
+    <Compile Include="Assets\Scripts\CharacterSelect.cs" />
     <Compile Include="Assets\Scripts\Hidden\HiddenController.cs" />
     <Compile Include="Assets\Scripts\Hidden\MouseCamLook.cs" />
+    <Compile Include="Assets\Scripts\Hidden\MovementController.cs" />
     <Compile Include="Assets\Scripts\Hidden\WallCling.cs" />
     <Compile Include="Assets\Scripts\Improved FP Controller\mouseLook.cs" />
     <Compile Include="Assets\Scripts\Improved FP Controller\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\IRIS\Health.cs" />
+    <Compile Include="Assets\Scripts\Iriscanvasenable.cs" />
+    <Compile Include="Assets\Scripts\LaserScript.cs" />
     <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
+    <Compile Include="Assets\Scripts\SonicAlarm.cs" />
+    <Compile Include="Assets\Scripts\Target.cs" />
+    <Compile Include="Assets\Scripts\Weapon_Switching.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\deleteExplosion.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\Grenade.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\Grenade_Instantiate.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\Grenade_Throw.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Hidden\Knife\Hidden_Knife_Attack.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov_Damage_Over_Time.cs" />
-    <Compile Include="Assets\SonicAlarm.cs" />
-    <Compile Include="Assets\Target.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov_Throw.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IRIS\Gun.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IRIS\Shotgun.cs" />
     <Compile Include="Assets\Video\videochange.cs" />
-    <Compile Include="Assets\Weapon_Switching.cs" />
     <None Include="Assets\Downloaded assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Downloaded assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Downloaded assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
