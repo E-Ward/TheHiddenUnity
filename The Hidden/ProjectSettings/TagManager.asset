@@ -11,6 +11,7 @@ TagManager:
   - Molotov Area Of Effect
   - Molotov
   - Hidden
+  - Radar Camera
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - Lighting
   - Ground
   - Postprocessing
-  - 
-  - 
+  - Radar
+  - Invisible
   - 
   - 
   - 

@@ -15,6 +15,9 @@ public class Gun : MonoBehaviour
     private int currentAmmo;
     private bool isReloading = false;
 
+    [Header("Laser sight properties")]
+    public GameObject laserSightEffect;
+
     [Header("Magazines")]
     public int Mag1;
     public int Mag2;
@@ -29,6 +32,7 @@ public class Gun : MonoBehaviour
     public GameObject impactEffect;
     [Header("UI")]
     public Text AmmoText;
+
 
     private void Start()
     {
@@ -50,6 +54,16 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit laserSightHitInfo;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out laserSightHitInfo,range))
+        {
+            //Debug.Log(laserSightHitInfo.transform.name);
+
+            laserSightEffect.transform.position = laserSightHitInfo.point - new Vector3(0,0,0.01f);
+            //GameObject impactLaserSight = Instantiate(laserSightEffect, laserSightHitInfo.point, Quaternion.LookRotation(laserSightHitInfo.normal));
+            //Destroy(impactLaserSight, 2f);
+        }
+
         AmmoText.text = currentAmmo.ToString();
         if (isReloading)
             return;
