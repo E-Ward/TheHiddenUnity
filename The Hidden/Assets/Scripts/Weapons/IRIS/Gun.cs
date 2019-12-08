@@ -17,6 +17,7 @@ public class Gun : MonoBehaviour
 
     [Header("Laser sight properties")]
     public GameObject laserSightEffect;
+    public float offset = 0.01f;
 
     [Header("Magazines")]
     public int Mag1;
@@ -57,9 +58,13 @@ public class Gun : MonoBehaviour
         RaycastHit laserSightHitInfo;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out laserSightHitInfo,range))
         {
+
+            // Vector3 updatedPos = laserSightEffect.transform.localPosition;
+            //updatedPos = laserSightHitInfo.point;
+
             //Debug.Log(laserSightHitInfo.transform.name);
 
-            laserSightEffect.transform.position = laserSightHitInfo.point - new Vector3(0,0,0.01f);
+            laserSightEffect.transform.position = laserSightHitInfo.point + laserSightHitInfo.normal*offset;
             //GameObject impactLaserSight = Instantiate(laserSightEffect, laserSightHitInfo.point, Quaternion.LookRotation(laserSightHitInfo.normal));
             //Destroy(impactLaserSight, 2f);
         }
