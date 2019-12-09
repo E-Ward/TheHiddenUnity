@@ -5,12 +5,17 @@ using UnityEngine;
 public class SonicAlarm1 : MonoBehaviour
 {
     private LineRenderer lr;
-    public AudioSource Alarm;
+    public AudioClip Alarm;
+    public AudioSource AudioSource;
+
+
+    private bool isTripped;
 
     // Start is called before the first frame update
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+        isTripped = false;
     }
 
     // Update is called once per frame
@@ -22,15 +27,27 @@ public class SonicAlarm1 : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "IRIS" || hit.collider.gameObject.tag == "Hidden")
             {
+                if (isTripped == false)
+                {
+                    AudioSource.PlayOneShot(Alarm);
+                    isTripped = true;
+                    StartCoroutine("WaitForSec");
+                }
+
                 lr.SetPosition(1, new Vector3(0, 0, hit.distance));
-                Alarm.Play();
-                Alarm.loop = true;
+                //AudioSource.loop = true;
             }
         }
         else
         {
             lr.SetPosition(1, new Vector3(0, 0, 5000));
-            Alarm.loop = false;
+            isTripped = false;
+            //AudioSource.loop = false;
         }
+    }
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(1);
+        isTripped = false;
     }
 }

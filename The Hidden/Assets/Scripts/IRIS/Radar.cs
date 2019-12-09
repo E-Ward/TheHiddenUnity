@@ -4,28 +4,38 @@ using UnityEngine;
 
 public class Radar : MonoBehaviour
 {
+    //List of game objects to be tracked by the radar
     public GameObject[] trackedObjects;
+    //List of sonic alarm game objects to be tracked by the radar
     public GameObject[] trackedSonicAlarmObjects;
     
 
     List<GameObject> radarObjects;
     List<GameObject> borderObjects;
-    List<GameObject> borderSonicAlarmObjects;
+
+
     List<GameObject> sonicAlarmObjects;
-
-
+    List<GameObject> borderSonicAlarmObjects;
+    
+    //Gameobject prefab that apears above the tracked objects
     public GameObject radarPrefab;
+    //Gameobject prefab that appears above the tracked sonic alarm
     public GameObject sonicAlarmPrefab;
 
+    //This determins when to switch between the edge objects and the close objects
     public float switchDistance;
+
+    //This transform is attached to the player so we can get a reference to where the player is.
+    //I know I could have just used the players transform but I have done it this way now
     public Transform helpTransform;
-
-
+    public Transform sonicHelpTransform;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //Calls the function createRadar objects
+        //This adds the radar object prefab above all of the tracked objects
         CreateRadarObjects();
     }
 
@@ -38,8 +48,9 @@ public class Radar : MonoBehaviour
             {
                 //Switch to border objects
                 helpTransform.LookAt(radarObjects[i].transform);
+
                 //determins the correct position of the border object
-                borderObjects[i].transform.position = transform.position + switchDistance * helpTransform.forward;
+                borderObjects[i].transform.position = transform.position + switchDistance * helpTransform.forward; 
                 borderObjects[i].layer = LayerMask.NameToLayer("Radar");
                 radarObjects[i].layer = LayerMask.NameToLayer("Invisible");
             }
@@ -53,12 +64,12 @@ public class Radar : MonoBehaviour
 
         for (int i = 0; i < sonicAlarmObjects.Count; i++)
         {
-            if (Vector3.Distance(radarObjects[i].transform.position, transform.position) > switchDistance)
+            if (Vector3.Distance(sonicAlarmObjects[i].transform.position, transform.position) > switchDistance)
             {
                 //Switch to border objects
-                helpTransform.LookAt(sonicAlarmObjects[i].transform);
+                sonicHelpTransform.LookAt(sonicAlarmObjects[i].transform);
                 //determins the correct position of the border object
-                sonicAlarmObjects[i].transform.position = transform.position + switchDistance * helpTransform.forward;
+                borderSonicAlarmObjects[i].transform.position = transform.position + switchDistance * sonicHelpTransform.forward; 
                 borderSonicAlarmObjects[i].layer = LayerMask.NameToLayer("Radar");
                 sonicAlarmObjects[i].layer = LayerMask.NameToLayer("Invisible");
             }
@@ -75,8 +86,10 @@ public class Radar : MonoBehaviour
     {
         radarObjects = new List<GameObject>();
         borderObjects = new List<GameObject>();
-        borderSonicAlarmObjects = new List<GameObject>();
+
         sonicAlarmObjects = new List<GameObject>();
+        borderSonicAlarmObjects = new List<GameObject>();
+        
 
         foreach (GameObject o in trackedObjects)
         {
@@ -93,8 +106,8 @@ public class Radar : MonoBehaviour
             GameObject l = Instantiate(sonicAlarmPrefab, s.transform.position, Quaternion.identity) as GameObject;
             sonicAlarmObjects.Add(l);
 
-            GameObject j = Instantiate(radarPrefab, s.transform.position, Quaternion.identity) as GameObject;
-            borderSonicAlarmObjects.Add(j);
+            GameObject h = Instantiate(sonicAlarmPrefab, s.transform.position, Quaternion.identity) as GameObject;
+            borderSonicAlarmObjects.Add(h);
         }
     }
 }
