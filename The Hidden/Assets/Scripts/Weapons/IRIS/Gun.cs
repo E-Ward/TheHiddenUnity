@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     private float nextTimeToFire = 0f;
     private int currentAmmo;
     private bool isReloading = false;
+    private bool isFlashlightOn = false;
 
     [Header("Laser sight properties")]
     public GameObject laserSightEffect;
@@ -31,6 +32,7 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzleFlash;
     [Header("GameObjects")]
     public GameObject impactEffect;
+    public GameObject torchLight;
     [Header("UI")]
     public Text AmmoText;
 
@@ -50,6 +52,8 @@ public class Gun : MonoBehaviour
     void OnEnable()
     {
         isReloading = false;
+        isFlashlightOn = false;
+        torchLight.SetActive(false);
     }
 
     // Update is called once per frame
@@ -83,6 +87,20 @@ public class Gun : MonoBehaviour
         {
             StartCoroutine(Reload());
             return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (isFlashlightOn == false)
+            {
+                torchLight.SetActive(true);
+                isFlashlightOn = true;
+            }
+            else if (isFlashlightOn == true)
+            {
+                torchLight.SetActive(false);
+                isFlashlightOn = false;
+            }
         }
 
         if (Input.GetButton("Fire1") && currentAmmo >0 && Time.time >= nextTimeToFire)

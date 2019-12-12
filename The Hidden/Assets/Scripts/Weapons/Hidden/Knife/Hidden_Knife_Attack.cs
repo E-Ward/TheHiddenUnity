@@ -9,6 +9,10 @@ public class Hidden_Knife_Attack : MonoBehaviour
     public Health enemyHealth;
 
     public GameObject IRIS;
+
+    public int attackDamage;
+    public int deadAttackDamage = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +24,15 @@ public class Hidden_Knife_Attack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))//This is when the left mouse button is pressed
         {
-
-            Attack();
+            if (enemyHealth.isPlayerDead == false)
+            {
+                Attack();
+            }
+            else if (enemyHealth.isPlayerDead == true)
+            {
+                DeadAttack();
+            }
+            
         }
 
     }
@@ -33,6 +44,16 @@ public class Hidden_Knife_Attack : MonoBehaviour
         if (Physics.Raycast(hiddenMainController.fpsCam.transform.position, hiddenMainController.fpsCam.transform.forward, out hit, hiddenMainController.range) && hit.transform.tag == "IRIS")
         {
             enemyHealth.onDamage();
+        }
+    }
+
+    public void DeadAttack()
+    {
+        Debug.Log("Player is Attacking a dead Iris member");
+        RaycastHit hit;
+        if (Physics.Raycast(hiddenMainController.fpsCam.transform.position, hiddenMainController.fpsCam.transform.forward, out hit, hiddenMainController.range) && hit.transform.tag == "IRIS")
+        {
+            enemyHealth.onDeadDamage();
         }
     }
 }

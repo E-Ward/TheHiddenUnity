@@ -22,21 +22,28 @@ public class SonicAlarm1 : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-
+        
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            if (hit.collider.gameObject.tag == "IRIS" || hit.collider.gameObject.tag == "Hidden")
+            //Debug.DrawLine(transform.position, hit.point, Color.green);
+            if (hit.collider)
             {
-                if (isTripped == false)
+                lr.SetPosition(1, new Vector3(0, 0, hit.distance) * 4.8f);
+                if (hit.collider.gameObject.tag == "IRIS" || hit.collider.gameObject.tag == "Hidden")
                 {
-                    AudioSource.PlayOneShot(Alarm);
-                    isTripped = true;
-                    StartCoroutine("WaitForSec");
-                }
 
-                lr.SetPosition(1, new Vector3(0, 0, hit.distance));
-                //AudioSource.loop = true;
+                    if (isTripped == false)
+                    {
+                        AudioSource.PlayOneShot(Alarm);
+                        isTripped = true;
+                        StartCoroutine("WaitForSec");
+                    }
+
+                    
+                    //AudioSource.loop = true;
+                }
             }
+            
         }
         else
         {

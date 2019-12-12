@@ -6,8 +6,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class HiddenController : MonoBehaviour
 {
-    
-
     public MovementController hiddenController;
 
     public GameObject HiddenCanvas;
@@ -26,7 +24,7 @@ public class HiddenController : MonoBehaviour
     public float hiddenStamina;
     public float hiddenMaxStamina = 100f;
     public Slider hiddenStaminaSlider;
-    public int attackDamage;
+    
 
     public bool isWallClinging;
 
