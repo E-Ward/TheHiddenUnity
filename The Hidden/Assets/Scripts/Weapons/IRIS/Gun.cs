@@ -20,11 +20,9 @@ public class Gun : MonoBehaviour
     public GameObject laserSightEffect;
     public float offset = 0.01f;
 
-    [Header("Magazines")]
-    public int Mag1;
-    public int Mag2;
-    public int Mag3;
-    public int Mag4;
+    [Header("Magazine")]
+    public int MagazineTotal;
+    public int currentAmountOfMags;
 
     [Header("Camera")]
     public Camera fpsCam;
@@ -33,6 +31,7 @@ public class Gun : MonoBehaviour
     [Header("GameObjects")]
     public GameObject impactEffect;
     public GameObject torchLight;
+    public GameObject outOfAmmoText;
     [Header("UI")]
     public Text AmmoText;
 
@@ -41,12 +40,11 @@ public class Gun : MonoBehaviour
     {
         currentAmmo = maxAmmo;
 
-        Mag1 = maxAmmo;
-        Mag2 = maxAmmo;
-        Mag3 = maxAmmo;
-        Mag4 = maxAmmo;
-
         AmmoText.text = maxAmmo.ToString();
+
+        currentAmountOfMags = MagazineTotal;
+
+        outOfAmmoText.SetActive(false);
     }
 
     void OnEnable()
@@ -83,7 +81,7 @@ public class Gun : MonoBehaviour
             return;
         }*/
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && currentAmountOfMags > 0)
         {
             StartCoroutine(Reload());
             return;
@@ -107,6 +105,15 @@ public class Gun : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+        }
+
+        if(currentAmountOfMags <= 0 && currentAmmo <= 0)
+        {
+            outOfAmmoText.SetActive(true);
+        }
+        else
+        {
+            outOfAmmoText.SetActive(false);
         }
     }
 
@@ -138,6 +145,7 @@ public class Gun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+        currentAmountOfMags -= 1;
         Debug.Log("Reloading...");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;

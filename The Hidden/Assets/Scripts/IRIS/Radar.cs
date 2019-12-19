@@ -42,6 +42,7 @@ public class Radar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         for(int i = 0; i< radarObjects.Count; i++)
         {
             if (Vector3.Distance(radarObjects[i].transform.position, transform.position) > switchDistance)
@@ -70,14 +71,18 @@ public class Radar : MonoBehaviour
                 sonicHelpTransform.LookAt(sonicAlarmObjects[i].transform);
                 //determins the correct position of the border object
                 borderSonicAlarmObjects[i].transform.position = transform.position + switchDistance * sonicHelpTransform.forward; 
+                
+                //checks to see if the sonic alram has been tripped. If it has then it will display the icon
+
                 borderSonicAlarmObjects[i].layer = LayerMask.NameToLayer("Radar");
                 sonicAlarmObjects[i].layer = LayerMask.NameToLayer("Invisible");
+
             }
             else
             {
                 //switch to radar objects
-                borderSonicAlarmObjects[i].layer = LayerMask.NameToLayer("Invisible");
-                sonicAlarmObjects[i].layer = LayerMask.NameToLayer("Radar");
+                    borderSonicAlarmObjects[i].layer = LayerMask.NameToLayer("Invisible");
+                    sonicAlarmObjects[i].layer = LayerMask.NameToLayer("Radar");
             }
         }
     }
@@ -101,13 +106,14 @@ public class Radar : MonoBehaviour
             borderObjects.Add(j);
         }
 
+        
         foreach (GameObject s in trackedSonicAlarmObjects)
         {
-            GameObject l = Instantiate(sonicAlarmPrefab, s.transform.position, Quaternion.identity) as GameObject;
-            sonicAlarmObjects.Add(l);
+                GameObject l = Instantiate(sonicAlarmPrefab, s.transform.position, Quaternion.identity) as GameObject;
+                sonicAlarmObjects.Add(l);
 
-            GameObject h = Instantiate(sonicAlarmPrefab, s.transform.position, Quaternion.identity) as GameObject;
-            borderSonicAlarmObjects.Add(h);
+                GameObject h = Instantiate(sonicAlarmPrefab, s.transform.position, Quaternion.identity) as GameObject;
+                borderSonicAlarmObjects.Add(h);
         }
     }
 }

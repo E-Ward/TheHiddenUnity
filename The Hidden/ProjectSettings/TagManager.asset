@@ -12,6 +12,8 @@ TagManager:
   - Molotov
   - Hidden
   - Radar Camera
+  - Fire
+  - Ammo Box
   layers:
   - Default
   - TransparentFX

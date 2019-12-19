@@ -170,6 +170,7 @@
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
     <Compile Include="Assets\Pickup.cs" />
+    <Compile Include="Assets\Scripts\Blinking_Text.cs" />
     <Compile Include="Assets\Scripts\btnFX.cs" />
     <Compile Include="Assets\Scripts\CharacterSelect.cs" />
     <Compile Include="Assets\Scripts\Hidden\HiddenController.cs" />
@@ -179,14 +180,14 @@
     <Compile Include="Assets\Scripts\Improved FP Controller\mouseLook.cs" />
     <Compile Include="Assets\Scripts\Improved FP Controller\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\IRIS\Health.cs" />
+    <Compile Include="Assets\Scripts\IRIS\IRIS_Controller.cs" />
     <Compile Include="Assets\Scripts\IRIS\Radar.cs" />
     <Compile Include="Assets\Scripts\Iriscanvasenable.cs" />
     <Compile Include="Assets\Scripts\LaserScript.cs" />
     <Compile Include="Assets\Scripts\lightRotate.cs" />
     <Compile Include="Assets\Scripts\Look_Towards.cs" />
     <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
-    <Compile Include="Assets\Scripts\SonicAlarm.cs" />
-    <Compile Include="Assets\Scripts\SonicAlarm1.cs" />
+    <Compile Include="Assets\Scripts\SonicAlarm_Trip.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\Weapon_Switching.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Grenade\deleteExplosion.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov_Damage_Over_Time.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hidden\Molotov\Molotov_Throw.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IRIS\Ammo_Crate.cs" />
     <Compile Include="Assets\Scripts\Weapons\IRIS\Gun.cs" />
     <Compile Include="Assets\Scripts\Weapons\IRIS\Shotgun.cs" />
     <Compile Include="Assets\Video\videochange.cs" />
@@ -243,49 +245,49 @@
     <None Include="Assets\DeferredNV\DeferredNightVision.shader" />
     <None Include="Assets\Downloaded assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/zetan/GitHub/TheHiddenUnity/The Hidden/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
